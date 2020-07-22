@@ -20,7 +20,8 @@ namespace EmployeeManagment.Web.Pages
             Employees = (await EmployeeService.GetEmployees()).ToList();
         }
 
-        //private void LoadEmployees()
+
+        //removed..  //private void LoadEmployees()
         //{
         //    System.Threading.Thread.Sleep(3000);
 
@@ -74,6 +75,7 @@ namespace EmployeeManagment.Web.Pages
 
         //    Employees = new List<Employee> { e1, e2, e3, e4 };
         //}
+
 
     }
 }
