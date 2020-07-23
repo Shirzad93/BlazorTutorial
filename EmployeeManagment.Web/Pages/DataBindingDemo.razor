@@ -38,3 +38,14 @@
 <div @bind-style="@color" @bind-style:event="onchange">
     <b>Color:</b> <input @bind="@color" @bind:event="oninput" />
 </div>
+
+
+<hr />
+
+<div>
+    <textarea @bind="@Description" @bind:event="oninput" style="width:500px"></textarea>
+    <div>
+        Counter: @Description.Length
+    </div>
+
+</div>
