@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BakoTech.Components\BakoTech.Components.csproj" />
     <ProjectReference Include="..\EmployeeManagemet.Models\EmployeeManagemet.Models.csproj" />
   </ItemGroup>
 

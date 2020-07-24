@@ -32,6 +32,10 @@ namespace EmployeeManagment.Web
             services.AddHttpClient<IEmployeeService, EmployeeService>(client => {
                 client.BaseAddress = new Uri("https://localhost:44302/");
             });
+
+            services.AddHttpClient<IDepartmentService, DepartmentService>(client => {
+                client.BaseAddress = new Uri("https://localhost:44302/");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

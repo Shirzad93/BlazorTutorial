@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EmployeeManagment.Api.Models
+namespace EmployeeManagment.Web.Services
 {
-    public interface IDepartmentRepository
+    public interface IDepartmentService
     {
+        Task<Department> GetDepartment(int id);
         Task<IEnumerable<Department>> GetDepartments();
-        Task<Department> GetDepartment(int departmentId);
-        
     }
 }
