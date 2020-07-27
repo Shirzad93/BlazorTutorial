@@ -79,7 +79,6 @@ namespace EmployeeManagment.Api.Controller
         [HttpPost]
         public async Task<ActionResult<Employee>> CreateEmoplyee(Employee employee)
         {
-
             try
             {
                 if (employee == null)
@@ -87,10 +86,9 @@ namespace EmployeeManagment.Api.Controller
                     return BadRequest();
                 }
 
-                var emp = employeeRepository.GetEmployeeByEmail(employee.Email);
+                var emp = await employeeRepository.GetEmployeeByEmail(employee.Email);
 
-                //???+
-                if (emp.Result != null)
+                if (emp != null)
                 {
                     ModelState.AddModelError("email", "email already in use");
                     return BadRequest(ModelState);
@@ -106,21 +104,16 @@ namespace EmployeeManagment.Api.Controller
             }
         }
 
-        [HttpPut("{id:int}")]
-        public async Task<ActionResult<Employee>> UpdateEmployee(int id, Employee employee)
+        [HttpPut]
+        public async Task<ActionResult<Employee>> UpdateEmployee(Employee employee)
         {
             try
             {
-                if (id != employee.EmployeeId)
-                {
-                    return BadRequest("employee ID mismatch");
-                }
-
-                var employeeToUpdate = await employeeRepository.GetEmployee(id);
+                var employeeToUpdate = await employeeRepository.GetEmployee(employee.EmployeeId);
 
                 if (employeeToUpdate == null)
                 {
-                    return NotFound($"Employee with id: {id} not found");
+                    return NotFound($"Employee with id: {employee.EmployeeId} not found");
                 }
 
                 return await employeeRepository.UpdateEmployee(employee);

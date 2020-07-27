@@ -14,7 +14,11 @@
     {
         @foreach (var employee in Employees)
         {
-           <DisplayEmployee Employee="employee" ShowFooter="ShowFooter" OnEmployeeSelection="EmployeeSelectionChnaged" ></DisplayEmployee>
+           <DisplayEmployee Employee="employee" 
+                            ShowFooter="ShowFooter" 
+                            OnEmployeeSelection="EmployeeSelectionChnaged" 
+                            OnEmployeeDeleted="EmployeeDeleted">
+           </DisplayEmployee>
         }
     }
         
