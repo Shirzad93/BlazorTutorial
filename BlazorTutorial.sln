@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagment.Web", "Em
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagment.Api", "EmployeeManagment.Api\EmployeeManagment.Api.csproj", "{841C7819-7144-45E9-8815-366963D8824E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BakoTech.Components", "BakoTech.Components\BakoTech.Components.csproj", "{EC90CE23-2917-4133-BCF1-2E5294AF08C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BakoTech.Components", "BakoTech.Components\BakoTech.Components.csproj", "{EC90CE23-2917-4133-BCF1-2E5294AF08C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -26,12 +26,20 @@ namespace EmployeeManagment.Web.Pages
 
         //[Inject]
         //public NavigationManager NavigationManager { get; set; }
+        protected BakoTech.Components.ConfirmBase DeleteConfirmation { get; set; }
 
         protected async Task Delete_Click()
         {
-            await EmployeeService.DeleteEmployee(Employee.EmployeeId);
-            await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
-            //NavigationManager.NavigateTo("/", true);
+            DeleteConfirmation.show();
+        }
+
+        protected async Task ConfirmDelete_Click(bool deleteConfirmed)
+        {
+            if (deleteConfirmed)
+            {
+                await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+                await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+            }
         }
 
         protected async Task CheckBoxChanged(ChangeEventArgs e)
